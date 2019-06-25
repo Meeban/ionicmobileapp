@@ -1,0 +1,91 @@
+<!--
+  Generated template for the EventPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="danger">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Event
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button tappable class="my-button" (click)="goToMessage()">
+        <ion-icon name="mail"></ion-icon>
+      </button>
+      <button ion-button class="my-button" tappable (click)="presentNotifications($event)">
+        <ion-icon name="notifications"></ion-icon>
+        <ion-badge id="notifications-badge" color="danger">{{notify}}</ion-badge>
+      </button>
+      <button ion-button class="my-button" tappable (click)="goToAccount()">
+        <ion-icon name="person"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<!-- <ion-content >
+ 
+  <ion-row>
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  </ion-row>
+  
+  <ion-col *ngFor="let item of items;">
+    <ion-card class="cardstyle" (click)="eventDetails(item.event_index_id)">
+      <ion-list>
+        <ion-item class="assngmnt">
+          <ion-icon color="mee" name="clipboard"></ion-icon> {{item.name}}
+          <ion-item class="assngmntname">{{item.event_type_name}}</ion-item>
+            <ion-item>Start on {{item.start_date.date | date:'dd/mm/yyyy'}}</ion-item>
+          <ion-item>End on {{item.end_date.date | date:'dd/MM/yyyy'}}</ion-item>
+        </ion-item>
+      
+      </ion-list>
+    </ion-card>
+  </ion-col>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content> -->
+
+<ion-content>
+<ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+  <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="dots" refreshingText="Refreshing...">
+  </ion-refresher-content>
+</ion-refresher>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+ <ion-grid *ngFor="let item of items;"> 
+   <ion-card style="margin: 9px !important;" (click)="eventDetails(item.event_index_id)"> 
+    <ion-row>
+      <ion-col padding>       
+        <p *ngIf="item.image_file">
+          <img src="{{path}}{{item.image_file}}" >
+        </p>
+        <p *ngIf="!item.image_file">
+          <img src="assets/img/NoImageAvailable.jpg">
+        </p>
+      </ion-col>      
+    </ion-row>
+    <ion-row >
+      <ion-col col-2 >
+        <div>
+       <div class="date-design">{{item.start_date.date | date:'dd'}}</div>
+       <div class="month-design">{{item.start_date.date | date:'MMM'}}</div>
+       </div>
+      </ion-col>
+      <ion-col col-10 class="event-title">
+          <div class="title-padding">{{item.name}}</div>
+      </ion-col>        
+    </ion-row>
+  </ion-card> 
+ </ion-grid>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
