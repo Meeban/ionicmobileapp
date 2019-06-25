@@ -1,0 +1,82 @@
+<!--
+  Generated template for the ViewNoticeListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="nice-clr">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+     Notice List
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button tappable class="my-button" (click)="goToMessage()">
+        <ion-icon name="mail"></ion-icon>
+      </button>
+      <button ion-button class="my-button" tappable (click)="presentNotifications($event)">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+      <button ion-button class="my-button" tappable (click)="goToAccount()">
+        <ion-icon name="person"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+ 
+  <ion-content *ngIf="listval!=0">
+
+  <ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="dots" refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+  <ion-grid>
+    <ion-row>
+        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    </ion-row>
+    <ion-row class="padng">
+      <ion-item>
+        <ion-label >
+          <ion-icon color="nice-clr" name="calendar"></ion-icon>
+        </ion-label>
+        <ion-datetime placeholder="Pick Date" displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
+      </ion-item>
+    </ion-row>
+  </ion-grid>
+
+<div *ngFor="let item of items;">
+<ion-card style="margin: 9px !important; line-height: 30px;" (click)="noticeView(item.noticelist_index_id)"> 
+  <ion-row >
+    <ion-col padding>       
+      <!-- <div class="notice-year">2019</div>      -->
+    </ion-col>      
+  </ion-row>
+  
+  <ion-row >
+    <ion-col col-2 >
+      <div>
+     <div class="date-design">{{item.notice_start_date.date | date:'dd'}}</div>
+     <div class="month-design">{{item.notice_start_date.date | date:'MMM'}}</div>
+     </div>
+    </ion-col>
+    <ion-col col-10 class="event-title">
+        <div class="title-padding">{{item.notice_title}}</div>
+    </ion-col>        
+  </ion-row>
+</ion-card>
+</div>
+<ion-infinite-scroll threshold="100px" (ionInfinite)="loadMore($event)">
+  <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+</ion-content>
+</ion-content>
+
+<ion-content *ngIf="listval == 0">
+<div class="div-center"><img src='assets/img/noticelist.svg' class="dash-icon" />
+  <b><p  class="norecord-p">No Records!</p></b></div>
+</ion-content>

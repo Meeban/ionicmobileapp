@@ -1,0 +1,129 @@
+page-view-notice-list {
+.notice-list{
+        // border: 1px solid #fff;
+        display: block;
+        // background: #80ffbf;
+        color: #0c0b0b; 
+        padding-left: 9px;  
+        font-size: 15px;
+        white-space: normal;       
+        // margin: -10px 0 -6px 0 !important;           
+      }
+     
+      .notice-list-name {
+        // border: 1px solid #fff;
+        display: block;
+        // background: #80ffbf;
+        color: #494949;
+        padding-left: 29px;
+        font-size: 14px;
+        margin: 0 !important;
+
+      }
+      .notice-list-date {              
+        font-size: 14px;        
+        margin: 0 !important;
+        padding:0 0 0 36px;             
+      }
+      .cardstyle{
+        // margin: 4px -17px;      
+        // width: 100%;
+        border-radius:0;         
+    }   
+    .material-icons.md-18 { font-size: 24px; }
+    .list-md {margin: 0px 0 8px !important;}
+    .label-md {margin: 0 !important;}
+    .item-input .label-md, .item-select .label-md, .item-datetime .label-md
+    {
+      color: #46a4da !important;
+      font-size: 27px !important;
+    }
+    .date-picker{
+      color:gray;
+      font-size: 16px;
+      padding: 0 0 0 21px;
+    }
+    // .picker-opt-selected{color: orangered !important;}
+    .picker-md .picker-prefix, .picker-md .picker-suffix, .picker-md .picker-opt.picker-opt-selected{color: orangered !important;}
+    .my-button:hover{color: #52cd82  !important;}
+    .searchbar-md{padding: 2px !important;}
+    .grid{padding: 0px !important;}
+    #notice-title{padding:12px;}
+    .dash-icon 
+    {
+      width: 30px;
+      position: relative;
+      top: 8px;
+      left: 0px;
+    }
+    .notice-title-design
+    {
+      background: cadetblue;
+     padding: 0 40px;
+     font-size: 15px;
+     color:#fff;
+    }
+    .notice-date-design
+    {
+     padding: 0 40px;
+     font-size: 13px;
+      background: cadetblue;
+      color:#fff;
+
+    }
+    .grid-design 
+    {
+       border: 1px solid #000;               
+    }
+    .event-title
+    {
+      padding: 0;
+      font-size: 15px;
+      // background: beige;
+      background: #f0fff0;        
+    }
+    .date-design
+    {
+      border-bottom: 2px solid;
+      font-size: 18px;
+      padding: 0 0 0 14px;
+      background: #014F59;
+      color: #fff;
+      border-radius: 4px;
+      margin-top: 0;          
+    }
+     .month-design
+    {
+      padding: 0 0 0 12px;
+      font-size: 14px;
+      color: #014F59;        
+    }
+       // #bg-design > .card-md{margin:9px !important;}
+    .my-button:hover{color: #52cd82  !important;}
+    .title-padding{padding: 15px 0 0 30px; color: #014F59; font-size: 17px; background: #f0fff0;}
+    .notice-year
+    {
+      text-align: center;
+      background: #014F59;
+      font-size: 20px;
+      color: aliceblue;
+    }
+    .div-center
+    {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -70px;
+        text-align: center;            
+    }
+   .norecord-p
+   {
+    font-size: 20px;       
+   }
+   .dash-icon 
+   {
+       width: 100px;
+       margin: 0 auto;        
+   }   
+  }
