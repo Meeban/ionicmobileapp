@@ -1,0 +1,32 @@
+page-event {
+
+     .grid-design 
+     {
+        border: 1px solid #000;               
+     }
+     .event-title
+     {
+       padding: 0;
+       font-size: 15px;        
+     }
+     .date-design
+     {
+       border-bottom: 2px solid;
+       font-size: 21px;
+       padding: 0 0 0 14px;
+       background: #f53d3d;
+       color: #fff;
+       border-radius: 4px;
+       margin-top: 0;          
+     }
+      .month-design
+     {
+       padding: 0 0 0 14px;
+       font-size: 12px;
+       color: #f53d3d;        
+     }
+        // #bg-design > .card-md{margin:9px !important;}
+     .my-button:hover{color: #52cd82  !important;}
+     .title-padding{padding: 0 0 0 5px;}
+     .searchbar-md{padding: 0px;}
+}
